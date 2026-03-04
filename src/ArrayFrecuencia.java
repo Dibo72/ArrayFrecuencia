@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class ArrayFrecuencia {
     public static void main(String[] args) {
         int[] repetidos = new int[10];
@@ -22,6 +20,11 @@ public class ArrayFrecuencia {
         //mostramos el array de la frecuencia
         System.out.println("Frecuencia:");
         mostrar(frecuencia);
+
+        System.out.println();
+
+        System.out.println("Mas apariciones: ");
+        maximo(frecuencia);
     }
 
     public static void modArray(int[] repetidos, int[] frecuencia) {
@@ -41,6 +44,39 @@ public class ArrayFrecuencia {
     public static void mostrar(int[] mostrar){
         for (int i = 0; i < mostrar.length; i++) {
             System.out.print(mostrar[i] + " ");
+        }
+    }
+
+    public static void maximo(int[] frecuencias){
+        int maximo[] = new int[frecuencias.length];
+        maximo[0] = 0;
+        int maxApariciones = 0;
+        int contador = 1;
+
+        for (int i = 0; i < frecuencias.length; i++) {
+            if (frecuencias[i] > maxApariciones) {
+                limpiar(maximo);
+                contador = 0;
+                maximo[contador] = i;
+                contador++;
+                maxApariciones = frecuencias[i];
+            }else if (frecuencias[i] == maxApariciones){
+                maximo[contador] = i;
+                contador++;
+            }
+        }
+        int[] mostrar = new int[contador];
+
+        for (int i = 0; i < contador; i++) {
+            mostrar[i] = maximo[i];
+        }
+
+        mostrar(mostrar);
+    }
+
+    public static void limpiar(int[] maximo){
+        for (int i = 0; i < maximo.length; i++) {
+            maximo[i] = 0;
         }
     }
 }
