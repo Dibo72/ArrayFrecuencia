@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class ArrayFrecuencia {
     public static void main(String[] args) {
@@ -12,12 +13,18 @@ public class ArrayFrecuencia {
         //lo mostramos
         System.out.println("Array:");
 
-        for (int i = 0; i < repetidos.length; i++) {
-            System.out.print(repetidos[i] + " ");
-        }
+        mostrar(repetidos);
 
         System.out.println();
 
+        modArray(repetidos, frecuencia);
+
+        //mostramos el array de la frecuencia
+        System.out.println("Frecuencia:");
+        mostrar(frecuencia);
+    }
+
+    public static void modArray(int[] repetidos, int[] frecuencia) {
         //si el valor del array es igual a la posicion que estamos mirando, el contador sube
         for (int i = 0; i < frecuencia.length; i++) {
             int contador = 0;
@@ -29,11 +36,11 @@ public class ArrayFrecuencia {
             //cuando ya hemos comprobado todos lo añadimos a freciuencia
             frecuencia[i] = contador;
         }
+    }
 
-        //mostramos el array de la frecuencia
-        System.out.println("Frecuencia:");
-        for (int i = 0; i < frecuencia.length; i++) {
-            System.out.print(frecuencia[i] + " ");
+    public static void mostrar(int[] mostrar){
+        for (int i = 0; i < mostrar.length; i++) {
+            System.out.print(mostrar[i] + " ");
         }
     }
 }
