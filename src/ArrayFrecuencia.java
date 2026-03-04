@@ -13,7 +13,7 @@ public class ArrayFrecuencia {
         System.out.println("Array:");
 
         for (int i = 0; i < repetidos.length; i++) {
-            System.out.println((repetidos[i]));
+            System.out.print(repetidos[i] + " ");
         }
 
         System.out.println();
@@ -33,7 +33,7 @@ public class ArrayFrecuencia {
         //mostramos el array de la frecuencia
         System.out.println("Frecuencia:");
         for (int i = 0; i < frecuencia.length; i++) {
-            System.out.println(frecuencia[i]);
+            System.out.print(frecuencia[i] + " ");
         }
     }
 }
